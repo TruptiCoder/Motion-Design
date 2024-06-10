@@ -73,6 +73,13 @@
 		}
 
 		/* Air */
+		#media video,
+		#media iframe {
+			border-radius: 1rem;
+			border: 1px solid #5521db;
+			object-fit: cover;
+		}
+
 	</style>
 </head>
 <body>
@@ -99,6 +106,11 @@
 
 		<div id="media">
 			<!-- Air -->
+			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/vqXLGX0szIQ?si=pTfcESgej2TeZ4V6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+			<video controls muted width="640px" height="320px" src="videos/video-3@c.mp4" poster="images/video-poster.jpg">Video tag is not supported by HTML5 video tag</video>
+
+			<!-- For more custmization of video visti videojs.com -->
 		</div>
 	</section>
 </body>
