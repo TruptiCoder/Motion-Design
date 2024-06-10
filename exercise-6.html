@@ -19,16 +19,16 @@
 		:root {
 			--def-transition-duration: .2s;
 
-			--color-cloudy: #5F7C9C;
-			--color-cloudy-shade: #56708c;
+			--color-cloudy: #3f7093;
+			--color-cloudy-shade: #5b88b9;
 
-			--color-sunny: #3F7ABC;
+			--color-sunny: #6a93c2;
 			--color-sunny-shade: #396ea9;
 
-			--color-rainy: #26323E;
+			--color-rainy: #3b4e62;
 			--color-rainy-shade: #222d38;
 
-			--color-thunderstorms: #101C29;
+			--color-thunderstorms: #405061;
 			--color-thunderstorms-shade: #0e1925;
 		}
 
@@ -105,7 +105,7 @@
 		}
 
 		.cloudy {
-			background: var(--color-cloudy) url(/images/cloudy@c.png);
+			background: var(--color-cloudy) url(/images/cloudy.png);
 		}
 
 		.cloudy .readings li {
@@ -113,7 +113,7 @@
 		}
 
 		.sunny {
-			background: var(--color-sunny) url(images/sunny@c.png);
+			background: var(--color-sunny) url(images/sunny.png);
 		}
 
 		.sunny .readings li {
@@ -121,7 +121,7 @@
 		}
 
 		.rainy {
-			background: var(--color-rainy) url(images/rainy@c.png);
+			background: var(--color-rainy) url(images/rainy.png);
 		}
 
 		.rainy .readings li {
@@ -129,7 +129,7 @@
 		}
 
 		.thunderstorms {
-			background: var(--color-thunderstorms) url(images/thunderstorms@c.png);
+			background: var(--color-thunderstorms) url(images/thunderstorm.png);
 		}
 
 		.thunderstorms .readings li {
@@ -251,6 +251,60 @@
 		/* In the video I'm using the following icons and imagery: */
 		/* - https://elements.envato.com/photo-realistic-weather-icon-set-K7MGJ3 */
 		/* - https://elements.envato.com/weather-icon-pack-3UHW3R3 */
+
+		.accordion--item {
+			transition-property: flex-basis , background-size, padding;
+		}
+
+		.accordion--item:hover:not(.opened){
+			background-size: 32rem;
+			padding-block: 3rem;
+		}
+
+		.accordion--item:hover:not(.opened) .bottom-temp {
+			transform: translate3d(0, -1rem , 0);
+		}
+
+		.bottom-temp {
+			transition-property: transform, opacity;
+		}
+
+		.opened .bottom-temp {
+			transform: translate3d(0, 2rem , 0);
+		}
+
+		.temp , 
+		.readings {
+			transition-property: opacity , transform;
+		}
+
+		.temp {
+			transform: translate3d(0 , -4rem , 0);
+		}
+
+		.readings {
+			transform: translate3d(0 , 4rem , 0);
+		}
+
+		.opened .temp, 
+		.opened .readings {
+			transform: translate3d(0 , 0 ,0);
+		}
+
+		.date li:nth-child(2) {
+			transition-property: color;
+		}
+
+
+		.accordion--item,
+		.bottom-temp,
+		.temp , 
+		.readings,
+		.date li:nth-child(2) {
+			transition-duration: var(--def-transition-duration);
+			transition-timing-function: ease-in-out;
+		}
+
 	</style>
 </head>
 <body>
